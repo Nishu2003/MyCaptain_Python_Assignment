@@ -1,13 +1,9 @@
 print("============= PROGRAM FOR PRINTING THE LETTERS IN DECREASING FREQUENCY ======================")
-W= input('Please enter a string :  ')
-def most_frequent(string):
-    d = dict()
-    for key in string:
-        if key not in d:
-            d[key] = 1
-        else:
-            d[key] += 1
-    return d
+from collections import Counter
 
-print("===========================================================")
-print (most_frequent(W))
+input_string = input('Please enter a string :  ')
+
+frequency_per_char = Counter(input_string)
+
+#  Output
+print ("Per char frequency in '{}' is :\n {}".format(input_string, str(frequency_per_char)))
